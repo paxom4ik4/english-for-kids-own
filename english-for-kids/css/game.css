@@ -1,0 +1,208 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    font-family: sans-serif;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 12%;
+    display: none; 
+    padding-left: 50px;
+    background-color: rgba(0, 204, 255, 0.404);
+}
+
+.menu-nav{
+    padding-top: 20%;
+    position: relative;
+}
+.menu-nav li{
+    font-family: fantasy;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.menu-nav li:hover{
+    text-decoration: underline;
+}
+.header-menu{
+    color: #00CCFF;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 700;
+    width: 200px;
+}
+.close-menu{
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+ul{
+    list-style-image: url(../imghtml/englishico.png);
+}
+.game-button{
+    font-style: italic;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -15%;
+    left: 40%;
+    display: inline-block;
+    color: tomato;
+    background-color: teal;
+    width: 300px;
+    height: 50px;
+    
+}
+.chosen{
+    color: tomato;
+}
+.play-button{
+    width: 200px;
+    left: 43.5%;
+}
+
+@media (max-width: 1440px){
+    .menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 20%;
+        display: none; 
+        padding-left: 50px;
+        background-color: rgba(0, 204, 255, 1);
+        z-index: 100;
+    }
+    .menu-nav li{
+        font-family: fantasy;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .header-menu{
+        color: #00CCFF;
+        cursor: pointer;
+        font-size: 28px;
+        font-weight: 700;
+        width: 200px;
+    }
+    .close-menu{
+        font-size: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }   
+}
+
+@media (max-width: 1024px){
+    .menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 30%;
+        display: none; 
+        padding-left: 50px;
+        background-color: rgba(0, 204, 255, 1);
+        z-index: 100;
+    }
+    .menu-nav li{
+        font-family: fantasy;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .header-menu{
+        color: #00CCFF;
+        cursor: pointer;
+        font-size: 28px;
+        font-weight: 700;
+        width: 200px;
+    }
+    .close-menu{
+        font-size: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }   
+}
+
+@media (max-width: 670px){
+    .menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 28%;
+        display: none; 
+        padding-left: 50px;
+        background-color: rgba(0, 204, 255, 1);
+        z-index: 100;
+    }
+    .menu-nav li{
+        font-family: fantasy;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .header-menu{
+        color: #00CCFF;
+        cursor: pointer;
+        font-size: 28px;
+        font-weight: 700;
+        width: 200px;
+    }
+    .close-menu{
+        font-size: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }   
+}
+@media (max-width: 425px){
+    .menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 90%;
+        display: none; 
+        padding-left: 50px;
+        background-color: rgba(0, 204, 255, 1);
+        z-index: 100;
+    }
+    .menu-nav li{
+        font-family: fantasy;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .header-menu{
+        color: #00CCFF;
+        cursor: pointer;
+        font-size: 28px;
+        font-weight: 700;
+        width: 200px;
+    }
+    .close-menu{
+        font-size: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }   
+}
