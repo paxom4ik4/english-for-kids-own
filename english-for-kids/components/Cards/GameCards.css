@@ -103,7 +103,28 @@
     width: 300px;
     height: 260px;
 }
-
+.win-image{
+    position: fixed;
+    left: 37%;
+    top: 37%;
+}
+.lose-image{
+    position: fixed;
+    left: 37%;
+    top: 37%;
+}
+.mistakes{
+    font-family: fantasy;
+    position: fixed;
+    left: 37%;
+    top: 20%;    
+}
+.wintitle{
+    font-family: fantasy;
+    position: fixed;
+    left: 37%;
+    top: 20%;    
+}
 @media (max-width: 1440px){
     #cards-container{
         margin-top: 100px;
