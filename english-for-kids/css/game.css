@@ -48,11 +48,12 @@ ul{
     list-style-image: url(../imghtml/englishico.png);
 }
 .game-button{
+    z-index: 100;
     font-style: italic;
     border-radius: 5px;
-    position: absolute;
-    bottom: -15%;
-    left: 40%;
+    position: fixed;
+    bottom: 15%;
+    left: 43%;
     display: inline-block;
     color: tomato;
     background-color: teal;
@@ -60,12 +61,26 @@ ul{
     height: 50px;
     
 }
+.repeat-button{
+    z-index: 100;
+    font-style: italic;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 15%;
+    left: 45%;
+    display: inline-block;
+    color: tomato;
+    background-color: teal;
+    width: 200px;
+    height: 50px;   
+}
 .chosen{
     color: tomato;
 }
-.play-button{
-    width: 200px;
-    left: 43.5%;
+
+.opacity {
+    opacity: 0.5;
+    transition: 1s;
 }
 
 @media (max-width: 1440px){
