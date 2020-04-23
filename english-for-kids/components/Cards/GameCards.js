@@ -2,7 +2,7 @@
 let actionACard = '';
     for(let i = 0; i<8; i++){
         actionACard += `
-            <div class="flip-card">
+            <div class="flip-card" num=${i}>
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                     <audio src="${cards[0][i].audioSrc}" class="card-audio"></audio>
@@ -17,7 +17,7 @@ let actionACard = '';
 let actionBCard = '';
     for(let i = 0; i<8; i++){
         actionBCard += `
-            <div class="flip-card">
+            <div class="flip-card" num=${i}>
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                 <audio src="${cards[1][i].audioSrc}" class="card-audio"></audio>
@@ -32,7 +32,7 @@ let actionBCard = '';
 let animalACard = '';
     for(let i = 0; i<8; i++){
         animalACard += `
-        <div class="flip-card">
+        <div class="flip-card" num=${i}>
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                 <audio src="${cards[2][i].audioSrc}" class="card-audio"></audio>
@@ -47,7 +47,7 @@ let animalACard = '';
 let animalBCard = '';
     for(let i = 0; i<8; i++){
         animalBCard += `
-            <div class="flip-card">
+            <div class="flip-card" num=${i}>
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                 <audio src="${cards[3][i].audioSrc}" class="card-audio"></audio>
@@ -62,7 +62,7 @@ let animalBCard = '';
 let clothesCard = '';
     for(let i = 0; i<8; i++){
         clothesCard += `
-        <div class="flip-card">
+        <div class="flip-card" num=${i}>
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                 <audio src="${cards[4][i].audioSrc}" class="card-audio"></audio>
@@ -77,7 +77,7 @@ let clothesCard = '';
 let emotionsCard = '';
     for(let i = 0; i<8; i++){
         emotionsCard += `
-            <div class="flip-card">
+            <div class="flip-card" num=${i}>
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                 <audio src="${cards[5][i].audioSrc}" class="card-audio"></audio>
@@ -93,7 +93,7 @@ let emotionsCard = '';
 let actionCCard = '';
     for(let i = 0; i<8; i++){
         actionCCard += `
-        <div class="flip-card">
+        <div class="flip-card" num=${i}>
         <div class="flip-card-inner">
             <div class="flip-card-front">
             <audio src="${cards[6][i].audioSrc}" class="card-audio"></audio>
@@ -109,7 +109,7 @@ let actionCCard = '';
 let adjectivesCard = '';
     for(let i = 0; i<8; i++){
         adjectivesCard += `
-        <div class="flip-card">
+        <div class="flip-card" num=${i}>
         <div class="flip-card-inner">
             <div class="flip-card-front">
             <audio src="${cards[7][i].audioSrc}" class="card-audio"></audio>
@@ -126,40 +126,52 @@ ROOT_CARDS.innerHTML = `
     <div class="action-a cards-block">
         ${actionACard}
         <button class="game-button" id="button1">Start Game</button>
+        <button class="repeat-button hide" id="repeat1">Repeat</button>
     </div>
     <div class="action-b cards-block">
         ${actionBCard}
         <button class="game-button" id="button2">Start Game</button>
+        <button class="repeat-button hide" id="repeat2">Repeat</button>
     </div>
     <div class="action-c cards-block">
         ${actionCCard}
         <button class="game-button" id="button3">Start Game</button>
+        <button class="repeat-button hide" id="repeat3">Repeat</button>
     </div>
     <div class="adjectives cards-block">
         ${adjectivesCard}
         <button class="game-button" id="button4">Start Game</button>
+        <button class="repeat-button hide" id="repeat4">Repeat</button>
     </div>
     <div class="animal-a cards-block">
         ${animalACard}
         <button class="game-button" id="button5">Start Game</button>
+        <button class="repeat-button hide" id="repeat5">Repeat</button>
     </div>
     <div class="animal-b cards-block">
         ${animalBCard}
         <button class="game-button" id="button6">Start Game</button>
+        <button class="repeat-button hide" id="repeat6">Repeat</button>
     </div>
     <div class="clothes cards-block">
         ${clothesCard}
         <button class="game-button" id="button7">Start Game</button>
+        <button class="repeat-button hide" id="repeat7">Repeat</button>
     </div>
     <div class="emotions cards-block">
         ${emotionsCard}
         <button class="game-button" id="button8">Start Game</button>
+        <button class="repeat-button hide" id="repeat8">Repeat</button>
     </div>
 `
 // Ссылки (Меню и категории)
 const cardsContainer = document.querySelector("#cards-container");
 const categories = document.querySelector("#main-container");
 const cardBlocks = document.querySelectorAll(".cards-block");
+
+// for(let i = 1; i<9; i++){
+//     cardBlocks[i].setAttribute('id','category'+i);
+// }
 
 // cards blocks
 const actionA = document.querySelector(".action-a");
@@ -306,7 +318,6 @@ hEmotions.addEventListener('click', ()=> {
 });
 
 // categories switch
-
 const categ1 = document.querySelector(".categ-1");
 const categ2 = document.querySelector(".categ-2");
 const categ3 = document.querySelector(".categ-3");
@@ -315,6 +326,12 @@ const categ5 = document.querySelector(".categ-5");
 const categ6 = document.querySelector(".categ-6");
 const categ7 = document.querySelector(".categ-7");
 const categ8 = document.querySelector(".categ-8");
+
+// let ident = document.createElement("span");
+// ident.style.display = "none";
+// ident.setAttribute("id","ident");
+// ident.innerText = 0;
+// document.body.append(ident);
 
 categ1.addEventListener('click', ()=>{
     categories.setAttribute('id', 'hide');
@@ -335,12 +352,12 @@ categ2.addEventListener('click', ()=>{
     cardBlocks.forEach(elem => {
         elem.classList.add("hide");
     });
-    actionB.classList.remove("hide");
+    actionB.classList.remove("hide");;
     $(".menu").fadeOut();   
     hrefs.forEach(elem =>{
         elem.classList.remove("chosen");
     })
-    hActionB.classList.add("chosen"); 
+    hActionB.classList.add("chosen");
 });
 categ3.addEventListener('click', ()=>{
     categories.setAttribute('id', 'hide');
@@ -392,7 +409,7 @@ categ6.addEventListener('click', ()=>{
     hrefs.forEach(elem =>{
         elem.classList.remove("chosen");
     })
-    hAnimalB.classList.add("chosen");   
+    hAnimalB.classList.add("chosen");  
 });
 categ7.addEventListener('click', ()=>{
     categories.setAttribute('id', 'hide');
@@ -405,7 +422,7 @@ categ7.addEventListener('click', ()=>{
     hrefs.forEach(elem =>{
         elem.classList.remove("chosen");
     })
-    hClothes.classList.add("chosen");    
+    hClothes.classList.add("chosen");  
 });
 categ8.addEventListener('click', ()=>{
     categories.setAttribute('id', 'hide');
@@ -422,6 +439,4 @@ categ8.addEventListener('click', ()=>{
 });
 
 const frontTitle = document.querySelectorAll(".front-title");
-
-
 
